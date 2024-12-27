@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's Dress</title>
+<style>
+.review-section {
+    margin-top: 3em;
+    padding: 1em;
+    background-color: #FFEBCD;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.review-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.review-form {
+    text-align: center;
+}
+
+.review-form input,
+.review-form textarea {
+    width: 80%;
+    margin-bottom: 1em;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.review-form button {
+    display: inline-block;
+}
+
+/* Review List */
+.review-list {
+    margin-top: 2em;
+    list-style: none;
+    padding: 0;
+}
+
+.review-list li {
+    margin: 0.5em 0;
+    padding: 0.5em;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+</style>
+<script> const reviewForm = document.getElementById("reviewForm");
+    const reviewList = document.getElementById("reviewList");
+
+    reviewForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const reviewerName = document.getElementById("reviewerName").value;
+        const reviewText = document.getElementById("reviewText").value;
+
+        if (reviewerName && reviewText) {
+            const newReview = document.createElement("li");
+            newReview.innerHTML = `<strong>${reviewerName}:</strong> ${reviewText}`;
+            reviewList.appendChild(newReview);
+            reviewForm.reset();
+        } else {
+            alert("Please fill out both fields.");
+        }
+    });
+});
+</script>
+<body>
+<div class="review-section">
+    <h2>Customer Reviews</h2>
+    <form class="review-form" id="reviewForm">
+        <input type="text" id="reviewerName" placeholder="Your Name" required><br>
+        <textarea id="reviewText" rows="4" placeholder="Write your review here..." required></textarea><br>
+        <button type="submit">Submit Review</button>
+    </form>
+    <ul class="review-list" id="reviewList">
+        <!-- Reviews will appear here -->
+    </ul>
+</div>
+</body>
+<html>
+

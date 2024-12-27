@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's Dress</title>
+<style>
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Header Section */
+header {
+    background-color:#333;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+}
+
+header nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: #ff5733;
+}
+
+/* Main Section */
+main {
+    padding: 2em;
+    background-color: #FFEBCD }
+
+/* Product Container */
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: center;
+}
+
+
+.product-image img {
+    max-width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.product-image img:hover {
+    transform: scale(1.05);
+}
+
+.product-details {
+    text-align: center;
+    max-width: 250px;
+
+
+}
+
+.product-details h2 {
+    font-size: 1.2em;
+    margin: 0.5em 0;
+}
+
+.product-details p {
+    font-size: 0.9em;
+    color: #555;
+    margin: 0.5em 0;
+}
+
+.price {
+    color: #ff5733;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.product-details input[type="number"] {
+    width: 50px;
+    padding: 5px;
+    margin: 0.5em 0;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Review Section */
+.review-section {
+    margin-top: 3em;
+    padding: 1em;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.review-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.review-form {
+    text-align: center;
+}
+
+.review-form input,
+.review-form textarea {
+    width: 80%;
+    margin-bottom: 1em;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.review-form button {
+    display: inline-block;
+}
+
+/* Review List */
+.review-list {
+    margin-top: 2em;
+    list-style: none;
+    padding: 0;
+}
+
+.review-list li {
+    margin: 0.5em 0;
+    padding: 0.5em;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Footer Section */
+footer {
+    text-align: center;
+    padding: 1em;
+    background-color: #333;
+    color: white;
+    margin-top: 2em;
+    font-size: 0.9em;
+}
+</style>
+<script>
+document.getElementById('addToCartForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form submission
+
+  const productName = document.getElementById('productName').value.trim();
+  const quantity = document.getElementById('quantity').value;
+
+  if (productName && quantity > 0) {
+    alert('Item added to cart successfully!');
+    document.getElementById('productName').value = '';
+    document.getElementById('quantity').value = '';
+  } else {
+    alert('Please fill out all fields correctly.');
+  }
+});
+
+
+    
+</script>
+</head>
+<body>
+    <header>
+        <h1>HEARTH & HEM</h1>
+        <nav>
+            <ul>
+                <li><a href="">New Arrivals</a></li>
+                <li><a href="C:\Users\mathi\OneDrive\Desktop\github\html1.html">Customer Reviews</a></li>
+                <li><a href="C:\Users\mathi\OneDrive\Desktop\github\html2.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="product-container">
+            <div class="product-image">
+              <div class="photo-row">
+                <img src= "C:\Users\mathi\OneDrive\Desktop\project\dress.jpg" id="product-img"><br>
+            </div>
+<center>
+            <div class="product-details">
+                <h2 id="product-title">Casual women's full sleeve white sweatshirt</h2>
+                <p id="product-description">
+                     ultra-smooth active tee is designed for versatility, whether you're going for a jog or running errands.
+                 </p>
+                <p class="price" id="product-price">₹2000</p>
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" value="1" min="1">     
+     <button id="addToCart">Add to Cart</button>
+            </div>
+</center>
+            <div class="product-image">
+                <img src= "C:\Users\mathi\OneDrive\Desktop\project\dress1.jpg"alt="Women's Summer Dress" id="product-img"><br>
+            </div><center>
+            <div class="product-details">
+                <h2 id="product-title">Sleeveless black bodycon dress for women</h2>
+                <p id="product-description">
+                     This stylish and sophisticated black summer dress is perfect for any occasion
+                </p>
+                <p class="price" id="product-price">₹2500</p>
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" value="1" min="1">
+                  <button id="addButton">Add to cart</button>
+                </div>
+</center>
+<div class="product-image">
+                <img src="C:\Users\mathi\OneDrive\Desktop\project\dress2.jpg" alt="Women's Summer Dress" id="product-img">
+            </div><center>
+            <div class="product-details">
+                <h2 id="product-title"> Women's tops and tunic</h2>
+                <p id="product-description">
+                   Embroidered Tulle Shirt with 3/4 Sleeves. Gathered high collar. Inlaid front ruffle and pleat detail. All-over appliqué embroidery. Mother-of-pearl buttons.
+                </p>
+                <p class="price" id="product-price">₹2500</p>
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" value="1" min="1">
+                <button id="addToCart">Add to Cart</button>
+            </div>
+</center>
+<div class="product-image">
+                <img src="C:\Users\mathi\OneDrive\Desktop\project\dress4.jpg" alt="Women's Summer Dress" id="product-img">
+            </div><center>
+            <div class="product-details">
+                <h2 id="product-title">Women's partywear bodycon dress</h2>
+                <p id="product-description">
+                      This is a women's sequined long-sleeve mini dress in a rich burgundy color.            
+     </p>
+                <p class="price" id="product-price">₹3000</p>
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" value="1" min="1">
+                <button id="addToCart">Add to Cart</button>
+            </div>
+</centre>
+<div class="product-image">
+                <img src="C:\Users\mathi\OneDrive\Desktop\project\dress3.jpg" id="product-img">
+            </div><centre>
+            <div class="product-details">
+                <h2 id="product-title">Casual women's Black dress</h2>
+                <p id="product-description">
+                              The page features a woman modeling the garment      </p>
+                <p class="price" id="product-price">₹3000</p>
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" value="1" min="1">
+                <button id="addToCart">Add to Cart</button>
+            </div>
+</centre>
+<div class="product-image">
+                <img src="C:\Users\mathi\OneDrive\Desktop\project\dress5.jpg" id="product-img">
+            </div><centre>
+            <div class="product-details">
+                <h2 id="product-title">Jean flared and tie up dress</h2>
+                <p id="product-description">
+                  chic and versatile denim dress, perfect for any occasion
+                </p>
+                <p class="price" id="product-price">₹2500</p>
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" value="1" min="1">
+                <button id="addToCart">Add to Cart</button>
+            </div>
+</centre>
+<div class="product-image">
+                <img src="C:\Users\mathi\OneDrive\Desktop\project\dress6.jpg" id="product-img">
+            </div><centre>
+            <div class="product-details">
+                <h2 id="product-title">Women's floral sweater bodycon dress</h2>
+                <p id="product-description">
+                            Long-sleeved maxi dress with a floral jacquard knit pattern    
+  </p>
+                <p class="price" id="product-price">₹2500</p>
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" value="1" min="1">
+              <button id="addToCart">Add to Cart</button>
+            </div>
+</centre>
+        </section>
+        
+   
+    </main>
+    <footer>
+        <p>© 2024 Fashion Boutique. All rights reserved.</p>
+    </footer>
+   </body>
+</html>
